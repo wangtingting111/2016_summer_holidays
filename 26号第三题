@@ -1,0 +1,37 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class product
+{
+    char *tag;
+    double price;
+    int quantity;
+public:
+    product(char *tag1,double price1,int quantity1):tag(tag1),price(price1),quantity(quantity1){}
+    int buy(char *tag2,double price2,int quantity2)
+    {
+        int s;
+        if(quantity2>quantity)
+            return false;
+        else
+        {
+            quantity-=quantity2;
+            s=quantity2*price;
+        }
+    }
+    void shu()
+    {
+        cout<<tag<<','<<price<<','<<quantity<<endl;
+    }
+    ~product()
+    {
+
+    }
+};
+int main()
+{
+    product aa("milk",5.0,10000);
+    cout<<aa.buy("milk",5.0,50000)<<endl;
+    aa.shu();
+    return 0;
+}
