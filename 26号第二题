@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Address
+{
+    string name,address,city;
+    int code;
+public:
+    Address(string name1,string address1,string city1,int code1):name(name1),address(address1),city(city1),code(code1){}
+    void ChangeName(string name2,string address2,string city2,int code2)
+    {
+        name=name2;
+        address=address2;
+        city=city2;
+        code=code2;
+    }
+    void Display()
+    {
+        cout<<name<<','<<address<<','<<city<<','<<code<<endl;
+    }
+~Address()
+{
+}
+};
+int main()
+{
+    Address aa("lili","tiexi","ShengYang",1112),bb("yiyi","tiexi","ShengYang",2223);
+    aa.ChangeName("zz","tiexi","panjin",1123);
+    aa.Display();
+    bb.Display();
+    bb.ChangeName("ww","xinglong","panjin",2234);
+    bb.Display();
+    return 0;
+}
